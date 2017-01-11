@@ -128,7 +128,7 @@ cost, we can add `burritoPrice` together with `tax` using the addition operator,
 `+`.
 
     var totalCost = burritoPrice + tax;
-    console.log(burritoPrice);
+    console.log(totalCost);
     //=> 6.529100000000001
 
 Notice that long string of zeroes and the 1 at the end. This is a
@@ -185,7 +185,7 @@ declaring variables using various symbols other than letters and numbers and see
 when you get a Syntax Error.
 
 3. Declare and define a variable that stores your name. Using that variable,
-construct a new variable that represents a greeting by concatentating "Hello" in
+construct a new variable that represents a greeting by concatenating "Hello" in
 front of your name. For example, we'd want to store the value "Hello Semmy" in a
 variable, where "Semmy" is stored in another variable.
 
