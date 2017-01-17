@@ -258,7 +258,7 @@ method, so you shouldn't use the parentheses.
     tweet.length
     //=> 47
 
-    tweet.slice(tweet.indexOf("tweet", tweet.length));
+    tweet.slice(tweet.indexOf("tweet"), tweet.length);
     //=> "tweet on twitter but not really"
 
 And, on top of that, you can always chain method calls.
