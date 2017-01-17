@@ -35,7 +35,7 @@ statements are executed. Similarly, if the boolean expression evaluates to
     //=> finished!
 
 Since the value stored in `age` is not greater than or equal to 13 (it's 11),
-it skips over the `if` statements associated code block and just executes the
+it skips over the `if` statement's associated code block and just executes the
 final log statement.
 
 Let's try using an `if` statement in a function. Suppose we want to project the
@@ -89,7 +89,7 @@ if the boolean expression evaluates to `false`.
     //=> finished!
 
 In this case, 40/12 is 3.75, which is less than 4 feet. Since it's not greater
-than 4 the `if-else` statement only executes the code block associated with the
+than 4, the `if-else` statement only executes the code block associated with the
 `else` clause.
 
 We can also use `if-else` statements to write more interesting functions. For
@@ -224,9 +224,9 @@ statements. For example, here's one way to find the maximum of 3 numbers:
         return result;
     }
 
-While nesting if statements is pretty normal and you'll find it in a lot of
+While nesting `if` statements is pretty normal and you'll find it in a lot of
 code, these situations can very often be simplified. Let's look at a couple of
-techniques for simplifying nested if statements. First, we could use compound
+techniques for simplifying nested `if` statements. First, we could use compound
 boolean expressions:
 
     var maxOfThree = function (numA, numB, numC) {
@@ -245,7 +245,7 @@ boolean expressions:
 
 The flat structure here is much easier to read than the first example. There
 is, however, a much better technique we can use for this case. What if we
-created a maxOfTwo function and then called that?
+created a `maxOfTwo` function and then called that?
 
     var maxOfThree = function (numA, numB, numC) {
         var bigger = maxOfTwo(numA, numB);
@@ -254,11 +254,11 @@ created a maxOfTwo function and then called that?
         return biggest;
     }
 
-We can easily write a maxOfTwo function that has a single `if-else` statement,
+We can easily write a `maxOfTwo` function that has a single `if-else` statement,
 saving us from the complications of nesting `if` statements.
 
 There are certainly cases where it's harder to unravel nested `if` and
-`if-else` statements, but they appear much less often in  the real world.
+`if-else` statements, but they appear much less often in the real world.
 
 ### Writing robust functions
 
