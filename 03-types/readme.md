@@ -49,14 +49,14 @@ practice section. Our `toTagString` function expects a string.
 
 What if, instead of a tag name, we send in an invalid tag?
 
-    // 'dv' is not a valid HTML tag, the user probably misspelled div
+    // 'dv' is not a valid HTML tag, the user probably misspelled 'div'
     toTagString("dv", "this is an invalid tag");
     //=> <dv>this is an invalid tag</dv>
 
 Or worse, what if the user sends in a number?
 
-    toTagString(5, "this is a number what are you doing?");
-    //=> <5>this is a number what are you doing?</5>
+    toTagString(5, "this is a number! what are you doing?");
+    //=> <5>this is a number! what are you doing?</5>
 
 Programmers often write functions in JavaScript without considering what happens
 when the arguments contain values of unexpected types. This can lead to bugs in
@@ -93,7 +93,7 @@ we say that the number is _coerced_ into a string by the `+` operator.
 ### Number Types and Arithmetic Expressions
 
 It's pretty important that we understand the basic operations we can apply to
-JavaScript's built in types. It's easiest to start with the `number` type,
+JavaScript's built-in types. It's easiest to start with the `number` type,
 because you'll recognize most of the operations from a standard calculator.
 
 The most-commonly used built-in operators for numbers are the (mostly) familiar
@@ -131,7 +131,7 @@ to do some pretty interesting things. Here's some examples of it:
     //=> 0, because 5 evenly divides 25
 
     24 % 5;
-    //=> 4, because 5 goes into 24 4 times with a remainder of 2
+    //=> 4, because 5 goes into 24 4 times with a remainder of 4
 
     100 % 5.99
     //=> 4.159999999999997, the change you'll get back buying as many super
@@ -144,7 +144,7 @@ numbers. We'll also use it to check whether numbers are prime!
 
 Beyond the basic arithmetic operations, we can do most other operations that a
 scientific calculator can do. The extended operators live inside the `Math`
-object as functions, and we access them using the dot operator (more on this
+object as functions, and we access them using the dot `.` operator (more on this
 later). For example, we can easily compute 2 to the third power by using the
 `pow` function.
 
@@ -178,7 +178,7 @@ You can find the largest and the smallest value in a set of numbers.
     Math.max(7, 2, 10, 5);
     //=> 10
 
-    Math.max(7, 2, 10, 5);
+    Math.min(7, 2, 10, 5);
     //=> 2
 
 Or you can easily generate a random number between 0 and 1. This is useful when
@@ -187,9 +187,9 @@ performing simulations.
     Math.random();
     //=> 0.23129316372796893
 
-Why doesn't `Math.random` return a whole number? It turns out by using the other
-operations, you can easily do this. For example, suppose we want to generate a
-random number between 0 and 9. We can start by multiplying the result by 10.
+Why doesn't `Math.random` return a whole number? It turns out, you can easily 
+do this by using the other operations. For example, suppose we want to generate 
+a random number between 0 and 9. We can start by multiplying the result by 10.
 
      var rand = Math.random();
      //=> sets rand to 0.475040664896369
@@ -207,9 +207,9 @@ whole number between 0 and 9.
 
 ### String Types and Built-In Methods
 
-Strings are a little more interesting than numbers, because they have built in
+Strings are a little more interesting than numbers, because they have built-in
 operations called _methods_ that generate new values (often strings) by applying
-functions to the current string. We access string methods using the dot
+functions to the current string. We access string methods using the dot `.`
 operator.
 
     "Hello World!".toLowerCase();
@@ -308,7 +308,7 @@ exactly two boolean values -- `true` and `false`.
     //=> boolean
 
 Usually, a boolean value is the result of a boolean expression. The expressions
-can be built up using JavaScript's built in comparison operations.
+can be built up using JavaScript's built-in comparison operations.
 
     5 < 7;   // is less than
     //=> true
@@ -330,7 +330,10 @@ see that uppercase letters always come before lowercase letters.
     //=> false, because upper-case letters come first
 
     "A" < "a";
-    //=> false, see?
+    //=> true, see?
+
+    "A" > "a";
+    //=> false
 
     "a" < "aa";
     //=> true
@@ -372,8 +375,8 @@ than 18.
     age > 0 && age < 18;
     //=> true
 
-The `&&` operator represents the logical "and". This returns true if both the
-expression on its left and expression on its right return true. Similarly, we
+The `&&` operator represents the logical "and". This returns `true` if both the
+expression on its left and expression on its right return `true`. Similarly, we
 can use the logical "or" operator, `||`. In this example, we're checking to see
 if the type is a number or a string.
 
@@ -407,7 +410,7 @@ type, which can lead to unexpected results. One of the things we'd like to do is
 make sure our function arguments are of the correct type. To do this, we can
 create simple functions that test the type of a given value, or a value stored
 in a variable. These functions return either `true` if the input has the
-property, and false otherwise.
+property, and `false` otherwise.
 
     var isNumber = function (n) {
         return typeof n === "number;
@@ -460,9 +463,9 @@ What are the types of the following values?
 
 
 2. Using the Chrome JavaScript console, practice with string methods. If you
-type a string and then the dot operator, and then wait a moment, you'll see that
-Chrome's auto-complete box will appear. You can use the up and down arrows to
-cycle through all the methods available on the string object. Apply a few of
+type a string and then the dot `.` operator, and then wait a moment, you'll see 
+that Chrome's auto-complete box will appear. You can use the up and down arrows 
+to cycle through all the methods available on the string object. Apply a few of
 those methods and see if you can understand what they do.
 
 The remainder of the practice problems can be found in the `practice.js` file.
