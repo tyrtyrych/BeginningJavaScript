@@ -5,10 +5,10 @@ lies in their ability to repeat things over and over again very quickly. This
 allows them to do things that it would have taken humans a *really* long time
 to do. We're going to learn a few ways of repeating things in JavaScript.
 
-### While loops as generalizations of if statements
+### `while` loops as generalizations of `if` statements
 
 In the last chapter, we learned how to write `if` statements. An `if` statement
-accepts a condition and a block of code to execute if the condition is true.
+accepts a condition and a block of code to execute if the condition is `true`.
 
     var num = 42;
 
@@ -18,14 +18,14 @@ accepts a condition and a block of code to execute if the condition is true.
     //=> num is even!
 
 A `while` loop extends this idea in that it continuously executes the block of
-code as long as the condition _stays_ true.
+code as long as the condition __stays__ `true`.
 
     while (num % 2 === 0) {
         console.log("num is even!");
     }
     //=> if num is even, this will run forever!!
 
-This can easily lead to _infinite loops_ as in the previous example. When that
+This can easily lead to __infinite loops__ as in the previous example. When that
 happens in the Chrome developer tools, our only hope is to close the tab and
 start over. We'll need to be careful!
 
@@ -35,12 +35,12 @@ want to modify the value that the condition is testing.
     var num = 150;
 
     while (num % 13 !== 0) {
-        console.log(num + " is not divisible by 13.");
+        console.log(num + " is not divisible by 13");
 
         // keep adding one to num
         num = num + 1;
     }
-    console.log("the first number bigger than 150 that is divisible by 13 is " + num);
+    console.log("The first number bigger than 150 that is divisible by 13 is " + num);
 
 The most common use we're going to have for loops is to repeat an operation a
 number of times. Let's make the computer check which of the integers between 1
@@ -67,7 +67,7 @@ and 10 are even.
     //=> 9 is odd!
     //=> 10 is even!
 
-### for-loops
+### `for`-loops
 
 Most of the looping we'll end up doing looks like the pattern we saw in the
 last two examples:
@@ -81,8 +81,8 @@ last two examples:
 3. A continuation condition that is checked prior to executing the loop body
 (e.g. `num <= 10`)
 
-4. The loop body -- the part of the code that is executed every time the
-continuation condition is found to be true
+4. The loop body –– the part of the code that is executed every time the
+continuation condition is found to be `true`
 
 It's common enough that JavaScript provides a different kind of loop called a
 `for` loop which makes this structure more obvious. Let's rewrite our last
@@ -126,10 +126,10 @@ hundred numbers.
         var count = 0;
 
         for (count = 0; count <= 100; count = count + 1) {
-            sumSoFar = sumSoFar + 1;
+            sumSoFar = sumSoFar + count;
         }
 
-        return sum;
+        return sumSoFar;
     }
     sumUpToOneHundred();
     //=> 5050
@@ -146,8 +146,8 @@ property or not (e.g. `isEven`, `isOdd`). Using loops we can compute more
 complex properties of numbers.
 
 For example, suppose we want to know the largest divisor of a number. We know
-that 1 evenly divides every number, so we can start with the assumption that 1
-is the largest divisor. Next, we can start at 2 and work our way up to the
+that `1` evenly divides every number, so we can start with the assumption that `1`
+is the largest divisor. Next, we can start at `2` and work our way up to the
 number itself. If we ever see a new divisor, we know it will be larger than the
 one we've already seen, so we can replace the current largest.
 
@@ -160,7 +160,7 @@ one we've already seen, so we can replace the current largest.
         var divisor;
 
         for (divisor = 2; divisor < num; divisor = divisor + 1) {
-            if (divisor % num === 0) {
+            if (num % divisor === 0) {
                 largestDivisorSoFar = divisor;
             }
         }
@@ -171,7 +171,7 @@ one we've already seen, so we can replace the current largest.
 ### Transforming Strings with Loops
 
 Since we've seen that we can easily find the length of a string with the
-`length` property and we can access individul characters with the `charAt`
+`length` property and we can access individual characters with the `charAt`
 method, we can pretty easily use a `for` loop to iterate over all the
 characters in a string.
 
@@ -197,11 +197,11 @@ characters in a string.
 
 We can use this approach to perform interesting operations on strings. For
 example, suppose we wanted to remove all vowels from a string. We might start
-by creating a helper function called isVowel that returns true if a single
+by creating a helper function called `isVowel` that returns `true` if a single
 character is an upper-case or lower-case vowel (I've left that as a problem in
 the practice section).
 
-Once we have isVowel, we can write our function like this.
+Once we have `isVowel`, we can write our function like this.
 
     var removeVowels = function (message) {
         if (typeof message !== "string") {
@@ -213,7 +213,7 @@ Once we have isVowel, we can write our function like this.
         var index;
 
         for (index = 0; index < message.length; index = index + 1) {
-            // if it's not a vowel, concatentate it to the result
+            // if it's not a vowel, concatenate it to the result
             if (!isVowel(message.charAt(index))) {
                 result = result + message.charAt(index);
             }
@@ -257,20 +257,20 @@ Then we might try something like this:
     //=> t
 
 Disaster! It's actually returning the _last_ lowerCaseLetter! We need some way
-to stop the loop as soon as we find a lower case letter, then return it. There
+to stop the loop as soon as we find a lower-case letter, then return it. There
 are a bunch of ways to solve this problem!
 
 However, before we fix our function, we have another problem. What should
-happen when there are _no_ lower-case letters in the string?
+happen when there are **_no_** lower-case letters in the string?
 
 We could throw an error, but it's probably not an error condition. (If it was
 an error condition, we would want to provide a `containsLowerCaseLetter`
 function so we could check without ending our program.)
 
 We could use a special value to denote the absence of a lower-case letter.
-That's the approach the `indexOf` function takes -- it returns -1 in the case
+That's the approach the `indexOf` function takes –– it returns -1 in the case
 the substring is not found. This approach will work pretty well for us in this
-case. Let's return the empty string, "", when there are no lower-case letters:
+case. Let's return the empty string, `""`, when there are no lower-case letters:
 
     var firstLowerCaseLetter = function (message) {
         var index;
@@ -307,7 +307,7 @@ variable has changed:
         return result;
     }
 
-This will cause the continuation condition to return false once we set the
+This will cause the continuation condition to return `false` once we set the
 result variable to a lower-case letter. It works pretty well, but it makes our
 condition more difficult to read.
 
