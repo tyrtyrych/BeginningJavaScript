@@ -28,9 +28,9 @@ element is from the beginning of the array. The first element has an index of
     //=> 7
 
 It might be surprising that `primes[3]` evaluates to 7 instead of 5. This is
-because primes[3] refers to the _fourth_ element in our primes array. This will
-make more sense if you recognize the index as _the distance of the entry from
-the first element in the array_.  It's important that we get our heads around
+because `primes[3]` refers to the _fourth_ element in our primes array. This will
+make more sense if you recognize the index as **_the distance of the entry from
+the first element in the array_**.  It's important that we get our heads around
 indexes, because they're the cause of a lot of programming mistakes. Let's try
 a few more examples:
 
@@ -53,7 +53,7 @@ stopping us from storing the individual elements in separate variables:
     console.log(french + "!");
     //=> bonjour!
 
-What happens if you ask for the element at a index that doesn't exist?
+What happens if you ask for the element at an index that doesn't exist?
 
     primes[-1]
     //=> undefined
@@ -96,7 +96,7 @@ assignment operator.
     //=> ["clubs", "diamonds", "coins", "spades"]
 
 However, just because you _can_ do something doesn't mean you should! In
-general, we want to avoid _mutating_ arrays unless absolutely necessary. It's
+general, we want to avoid **_mutating_** arrays unless absolutely necessary. It's
 more difficult to read and write software when our values keep changing on us.
 
 ### Using Variables for Indices
@@ -137,7 +137,7 @@ arrays.
     greeting[greeting.length - 2];
     //=> o
 
-You can think of an array's `push` method as being similar to using the +
+You can think of an array's `push` method as being similar to using the `+`
 operator on a string and adding a single character. However, there's a much
 more general way of adding two arrays together: the `concat` method!
 
@@ -151,7 +151,7 @@ makes sense. For example, the `toUpperCase` method wouldn't make any sense for
 an array, while several of the array methods we'll learn in this chapter
 wouldn't make sense for a string.
 
-That said, some methods and properties _are_ shared. For example, the `length`
+That said, some methods and properties __are__ shared. For example, the `length`
 property is the same for both arrays and strings.
 
     "hello".length;
@@ -160,7 +160,7 @@ property is the same for both arrays and strings.
     ["this", "is", "an", "array"].length
     //=> 4
 
-And both the `indexOf` and `slice` methods exists on an array. They work
+And both the `indexOf` and `slice` methods exist on an array. They work
 exactly like you'd expect.
 
     var places = [ "first", "second", "third", "fourth", "fifth" ]
@@ -174,10 +174,10 @@ exactly like you'd expect.
     places.slice(1, 3);
     //=> [ "second", "third" ]
 
-We'll learn more about the relationship between strings an arrays in the next
+We'll learn more about the relationship between strings and arrays in the next
 section.
 
-### Iterating Over Arrays with `for`-loops
+### Iterating Over Arrays with _for_-loops
 
 Like strings, arrays can be passed as arguments to functions:
 
@@ -186,7 +186,7 @@ Like strings, arrays can be passed as arguments to functions:
     }
 
 We can use this feature to write a function that prints all of the elements of
-the array by using a for loop to iterate over all of its indices.
+the array by using a _for_-loop to iterate over all of its indices.
 
     var printEachElement = function (list) {
         var index;
@@ -200,7 +200,7 @@ the array by using a for loop to iterate over all of its indices.
 
 One of the things we can do with a list of numbers is return its sum. Here's an
 example that does just that; it's a lot like the summing examples we've seen
-previously, but here we are using the `for` loop to control the indices of the
+previously, but here we are using the _for_-loop to control the indices of the
 array instead of the actual values we are summing.
 
     var sumAnArray = function (listOfNumbers) {
@@ -239,8 +239,8 @@ This behavior is probably a little unexpected:
     typeof [];
     //=> object
 
-Unfortunately, JavaScript doesn't have a primitive type for an array -- instead
-it's considered an `object`, which we'll talk more about in an upcoming
+Unfortunately, JavaScript doesn't have a primitive type for an array –– instead
+it's considered an __object__, which we'll talk more about in an upcoming
 section. So how do we figure out when we've got an array?
 
 Fortunately, every JavaScript interpreter has a built-in `Array` object that has
@@ -263,6 +263,6 @@ same thing. However, they've got a few important differences. What happens when
 you access an element outside the length of the string with `charAt`? What
 happens when you do the same thing with the square brackets?
 
-1. You can _mutate_ an the value at an index in an array by using the square
+1. You can _mutate_ the value at an index in an array by using the square
 brackets. Does the same thing work with a string? Why might that be?
 
