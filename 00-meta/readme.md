@@ -57,8 +57,8 @@ some of the material in later sections to be unfamiliar.
 ### What will we learn?
 
 The material includes variable declarations and definitions, function
-definitions, types, conditional statements, loops (with a focus on `for`-loops),
-arrays, built-in array methods, and objects (*not* OOP -- objects as maps).
+definitions, types, conditional statements, loops (with a focus on _for_-loops),
+arrays, built-in array methods, and objects (**not* OOP** -- objects as maps).
 
 ### What will we not learn?
 
